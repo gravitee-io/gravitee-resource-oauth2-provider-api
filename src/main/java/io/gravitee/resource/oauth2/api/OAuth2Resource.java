@@ -18,6 +18,7 @@ package io.gravitee.resource.oauth2.api;
 import io.gravitee.gateway.api.handler.Handler;
 import io.gravitee.resource.api.AbstractConfigurableResource;
 import io.gravitee.resource.api.ResourceConfiguration;
+import io.gravitee.resource.oauth2.api.openid.UserInfoResponse;
 
 /**
  * @author David BRASSELY (david.brassely at graviteesource.com)
@@ -26,4 +27,6 @@ import io.gravitee.resource.api.ResourceConfiguration;
 public abstract class OAuth2Resource<C extends ResourceConfiguration> extends AbstractConfigurableResource<C> {
 
     public abstract void introspect(String accessToken, Handler<OAuth2Response> responseHandler);
+
+    public abstract void userInfo(String accessToken, Handler<UserInfoResponse> responseHandler);
 }
