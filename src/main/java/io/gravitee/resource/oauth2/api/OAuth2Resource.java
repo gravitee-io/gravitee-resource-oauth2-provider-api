@@ -25,8 +25,13 @@ import io.gravitee.resource.oauth2.api.openid.UserInfoResponse;
  * @author GraviteeSource Team
  */
 public abstract class OAuth2Resource<C extends ResourceConfiguration> extends AbstractConfigurableResource<C> {
+    String DEFAULT_SCOPE_SEPARATOR = " ";
 
     public abstract void introspect(String accessToken, Handler<OAuth2Response> responseHandler);
 
     public abstract void userInfo(String accessToken, Handler<UserInfoResponse> responseHandler);
+
+    public String getScopeSeparator(){
+        return DEFAULT_SCOPE_SEPARATOR;
+    }
 }
