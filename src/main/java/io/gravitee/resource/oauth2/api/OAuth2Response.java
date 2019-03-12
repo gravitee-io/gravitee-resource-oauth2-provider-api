@@ -22,9 +22,7 @@ package io.gravitee.resource.oauth2.api;
 public class OAuth2Response {
 
     private final boolean success;
-
     private final String payload;
-
     private final Throwable throwable;
 
     public OAuth2Response(final boolean success, final String payload) {
