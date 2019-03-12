@@ -26,6 +26,7 @@ import io.gravitee.resource.oauth2.api.openid.UserInfoResponse;
  */
 public abstract class OAuth2Resource<C extends ResourceConfiguration> extends AbstractConfigurableResource<C> {
     String DEFAULT_SCOPE_SEPARATOR = " ";
+    String DEFAULT_USER_CLAIM = "sub";
 
     public abstract void introspect(String accessToken, Handler<OAuth2Response> responseHandler);
 
@@ -33,5 +34,9 @@ public abstract class OAuth2Resource<C extends ResourceConfiguration> extends Ab
 
     public String getScopeSeparator(){
         return DEFAULT_SCOPE_SEPARATOR;
+    }
+
+    public String getUserClaim(){
+        return DEFAULT_USER_CLAIM;
     }
 }
