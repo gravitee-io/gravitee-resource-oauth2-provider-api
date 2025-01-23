@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/gravitee-io/gravitee-resource-oauth2-provider-api/compare/1.4.0...1.4.1) (2025-01-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency io.gravitee:gravitee-parent to v20.5 ([b1b968c](https://github.com/gravitee-io/gravitee-resource-oauth2-provider-api/commit/b1b968cbbd83cd4d649a5c62de0df29e58a0ca29))
+
 # [1.4.0](https://github.com/gravitee-io/gravitee-resource-oauth2-provider-api/compare/1.3.0...1.4.0) (2023-11-23)
 
 
