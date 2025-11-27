@@ -1,11 +1,11 @@
-/**
- * Copyright (C) 2015 The Gravitee team (http://gravitee.io)
+/*
+ * Copyright © 2015 The Gravitee team (http://gravitee.io)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *         http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -39,5 +39,15 @@ public abstract class OAuth2Resource<C extends ResourceConfiguration> extends Ab
 
     public String getUserClaim() {
         return DEFAULT_USER_CLAIM;
+    }
+
+    /**
+     * This method should return an {@link OAuth2ResourceMetadata} object following the
+     * <a href="https://datatracker.ietf.org/doc/html/rfc9728">RFC 9728</a> specification.
+     *
+     * @param protectedResourceUri The {@link OAuth2ResourceMetadata#protectedResourceUri} value.
+     */
+    public OAuth2ResourceMetadata getProtectedResourceMetadata(String protectedResourceUri) {
+        return new OAuth2ResourceMetadata(protectedResourceUri, null, null);
     }
 }

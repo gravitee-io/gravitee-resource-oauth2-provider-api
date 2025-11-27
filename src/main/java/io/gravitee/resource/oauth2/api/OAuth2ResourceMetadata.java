@@ -15,9 +15,11 @@
  */
 package io.gravitee.resource.oauth2.api;
 
-public class OAuth2ResourceException extends Exception {
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
-    public OAuth2ResourceException(String message) {
-        super(message);
-    }
-}
+public record OAuth2ResourceMetadata(
+    @JsonProperty("resource") String protectedResourceUri,
+    @JsonProperty("authorization_servers") List<String> authorizationServers,
+    @JsonProperty("scopes_supported") List<String> scopesSupported
+) {}
