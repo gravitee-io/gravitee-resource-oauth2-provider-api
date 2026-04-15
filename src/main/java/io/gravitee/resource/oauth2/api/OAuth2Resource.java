@@ -19,6 +19,7 @@ import io.gravitee.gateway.api.handler.Handler;
 import io.gravitee.resource.api.AbstractConfigurableResource;
 import io.gravitee.resource.api.ResourceConfiguration;
 import io.gravitee.resource.oauth2.api.openid.UserInfoResponse;
+import java.util.List;
 
 /**
  * @author David BRASSELY (david.brassely at graviteesource.com)
@@ -44,10 +45,16 @@ public abstract class OAuth2Resource<C extends ResourceConfiguration> extends Ab
     /**
      * This method should return an {@link OAuth2ResourceMetadata} object following the
      * <a href="https://datatracker.ietf.org/doc/html/rfc9728">RFC 9728</a> specification.
-     *
-     * @param protectedResourceUri The {@link OAuth2ResourceMetadata#protectedResourceUri} value.
+     */
+    public OAuth2ResourceMetadata getProtectedResourceMetadata(String protectedResourceUri, List<String> scopesSupported) {
+        return new OAuth2ResourceMetadata(protectedResourceUri, null, scopesSupported);
+    }
+
+    /**
+     * This method should return an {@link OAuth2ResourceMetadata} object following the
+     * <a href="https://datatracker.ietf.org/doc/html/rfc9728">RFC 9728</a> specification.
      */
     public OAuth2ResourceMetadata getProtectedResourceMetadata(String protectedResourceUri) {
-        return new OAuth2ResourceMetadata(protectedResourceUri, null, null);
+        return getProtectedResourceMetadata(protectedResourceUri, null);
     }
 }
