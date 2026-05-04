@@ -19,6 +19,8 @@ import io.gravitee.gateway.api.handler.Handler;
 import io.gravitee.resource.api.AbstractConfigurableResource;
 import io.gravitee.resource.api.ResourceConfiguration;
 import io.gravitee.resource.oauth2.api.openid.UserInfoResponse;
+import io.gravitee.resource.oauth2.api.tokenexchange.TokenExchangeRequest;
+import io.gravitee.resource.oauth2.api.tokenexchange.TokenExchangeResponse;
 import java.util.List;
 
 /**
@@ -33,6 +35,16 @@ public abstract class OAuth2Resource<C extends ResourceConfiguration> extends Ab
     public abstract void introspect(String accessToken, Handler<OAuth2Response> responseHandler);
 
     public abstract void userInfo(String accessToken, Handler<UserInfoResponse> responseHandler);
+
+    /**
+     * Performs an OAuth 2.0 Token Exchange as defined by RFC 8693.
+     * Override this method in a resource implementation to support token exchange.
+     */
+    public void tokenExchange(TokenExchangeRequest tokenExchangeRequest, Handler<TokenExchangeResponse> responseHandler) {
+        responseHandler.handle(
+            new TokenExchangeResponse(new UnsupportedOperationException("Token exchange is not supported by this OAuth2 resource"))
+        );
+    }
 
     public String getScopeSeparator() {
         return DEFAULT_SCOPE_SEPARATOR;
