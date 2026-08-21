@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/gravitee-io/gravitee-resource-oauth2-provider-api/compare/1.5.1...1.6.0) (2026-08-21)
+
+
+### Features
+
+* Introduce support for OAuth 2.0 Token Exchange (RFC 8693) definitions ([eca0fb9](https://github.com/gravitee-io/gravitee-resource-oauth2-provider-api/commit/eca0fb99805193416aaa70ab2f2815e24ad8d808))
+
 ## [1.5.1](https://github.com/gravitee-io/gravitee-resource-oauth2-provider-api/compare/1.5.0...1.5.1) (2026-04-15)
 
 
