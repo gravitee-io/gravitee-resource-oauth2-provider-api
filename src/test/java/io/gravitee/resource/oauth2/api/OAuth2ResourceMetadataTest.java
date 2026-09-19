@@ -40,8 +40,9 @@ class OAuth2ResourceMetadataTest {
         assertAll(
             () -> assertThat(resourceDataMap.get("resource")).isEqualTo("https://example.com"),
             () ->
-                assertThat(((List<String>) resourceDataMap.get("authorization_servers")))
-                    .containsExactlyInAnyOrder("https://auth.server.com"),
+                assertThat(((List<String>) resourceDataMap.get("authorization_servers"))).containsExactlyInAnyOrder(
+                    "https://auth.server.com"
+                ),
             () -> assertThat(((List<String>) resourceDataMap.get("scopes_supported"))).containsExactlyInAnyOrder("read", "write")
         );
     }
