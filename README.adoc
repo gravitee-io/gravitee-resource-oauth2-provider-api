@@ -10,3 +10,16 @@ image:https://f.hubspotusercontent40.net/hubfs/7600448/gravitee-github-button.jp
 == Description
 The resource OAuth2 provider API contains the interfaces to implement in order to create a Oauth2 provider plugin for Gravitee.io APIM. +
 An example can be found https://github.com/gravitee-io/gravitee-resource-oauth2-provider-keycloak[here]
+
+== Compatibility matrix
+
+|===
+| Plugin version | APIM            | Java version
+
+| 2.x            | 4.9.x to latest | 21
+| 1.x            | 4.9.x to latest | 17
+|===
+
+The *Java version* column is the bytecode level of the latest release of each line, which sets the minimum runtime able to load the artifact.
+
+APIM pins the version it embeds, so the 2.x bump is backported to the support branches rather than left to master alone: the provider plugins take this API as `provided`, and a branch that keeps pinning 1.x could only take a fix from a 1.x branch built with the old orb and parent.
