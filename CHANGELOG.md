@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/gravitee-io/gravitee-resource-oauth2-provider-api/compare/1.6.0...2.0.0) (2026-09-22)
+
+
+* chore(deps)!: move to the gravitee orb 5 and parent 24 ([502ff14](https://github.com/gravitee-io/gravitee-resource-oauth2-provider-api/commit/502ff14e5bd11354df7a6fee4f7f5079bb39dbdd))
+
+
+### BREAKING CHANGES
+
+* the artifact is now compiled for Java 21, up from Java 17, and
+requires a Java 21 runtime or later.
+
+https://gravitee.atlassian.net/browse/BX-403
+
 # [1.6.0](https://github.com/gravitee-io/gravitee-resource-oauth2-provider-api/compare/1.5.1...1.6.0) (2026-08-21)
 
 
